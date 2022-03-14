@@ -1,0 +1,148 @@
+.vr {
+  padding-top: 150px;
+  .container {
+    display: flex;
+    align-items: flex-end;
+    @include maxMedia(991) {
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .img {
+      width: 50%;
+      @include maxMedia(991) {
+        width: 100%;
+      }
+      .svg {
+        @include maxMedia(991) {
+          max-width: 100%;
+        }
+      }
+    }
+    .text {
+      background-color: white;
+      position: relative;
+      height: 50%;
+      padding-top: 80px;
+      padding-left: 90px;
+      @include maxMedia(991) {
+        padding-top: 60px;
+        padding-left: 0;
+      }
+      h2 {
+        margin: 0;
+        font-size: 3em;
+        @include maxMedia(991) {
+          font-size: 2.5em;
+        }
+        text-transform: uppercase;
+      }
+      p {
+        color: $DarkGray;
+        line-height: 1.6;
+        font-size: $FontSize + 0.5px;
+      }
+    }
+  }
+}
+
+.galary {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .container {
+    position: relative;
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      h2 {
+        font-size: 3em;
+        text-transform: uppercase;
+        @include maxMedia(767) {
+          font-size: 2em;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      a {
+        color: black;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: $FontSize + 1px;
+        letter-spacing: 5px;
+        border: 2px solid #000;
+        border-radius: 3px;
+        transition: 0.2s;
+        padding: 10px 40px;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+        @include maxMedia(767) {
+          position: absolute;
+          bottom: -40px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    .images {
+      .column {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        .img {
+          margin-bottom: 30px;
+          position: relative;
+          overflow: hidden;
+          &::after {
+            content: "";
+            transition: .5s;
+            position: absolute;
+            bottom: -100%;
+            right: 0;
+            width: 100%;
+            height: 50%;
+            background-color: rgba($color: white, $alpha: .7);
+          }
+          &::before {
+            content: "";
+            transition: .5s;
+            position: absolute;
+            top: -100%;
+            z-index: 1;
+            right: 0;
+            width: 100%;
+            height: 50%;
+            background-color: rgba($color: white, $alpha: .7);
+          }
+          &:hover::after {
+            bottom: 0;
+          }
+          &:hover::before {
+            top: 0;
+          }
+          &:hover .text {
+            transition: .2s;
+            color: black;
+          }
+          .text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            text-transform: uppercase;
+            font-family: $Sans;
+            font-size: 2em;
+            color: white;
+            z-index: 62;
+            @include maxMedia(767) {
+              font-size: 1.7em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

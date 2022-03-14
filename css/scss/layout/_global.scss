@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: $FontSize;
+  font-family: $Alata;
+  font-weight: 400;
+}
+
+
+h1,
+h2,
+h3 {
+  font-family: $Sans;
+  font-weight: 300;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
